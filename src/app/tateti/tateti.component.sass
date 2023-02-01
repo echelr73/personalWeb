@@ -1,0 +1,48 @@
+body
+    padding-left: 20px 
+
+.container
+    display: flex 
+    flex-wrap: wrap
+
+#log-container
+    font-size: 20px
+    flex-grow: 0
+    width: 150px
+
+#log-container > div
+    margin-bottom: 10px
+
+#log-container:hover
+    opacity: 0.6
+    cursor: default
+
+#grid
+    height: 150px
+    width: 150px
+    margin-right: 10px
+    margin-bottom: 10px
+    border: #AAA 1px solid
+    display: grid
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAABmJLR0QAAAAAAAD5Q7t/AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4wECDC4GIBN3ygAAALRJREFUeNrt3EERACAIRUF0LED/kETACp5xXwNm519Z3d0xoKqacEbsEBABASIgQAQEiIAAERABASIgQAQEiIAAERABASIgQAQEiIAAERABASIgQAQEiIAAERABASIgQAQEiIAAERABAaLHzpRPbJlpIQICRECACIiAABEQIAICRECACIiAABEQIAICRECACIiAABEQIAICRECACIiAABEQIAICRECACIiAABEQIAICRED+6gIWHgqTCjDh1wAAAABJRU5ErkJggg==')            
+    grid-template-columns: 50px 50px 50px
+    grid-template-rows: 50px 50px 50px
+
+.cruz
+    height: 50px
+    width: 50px
+    z-index: 0
+    flex-shrink: 0
+    background-image: url('/src/assets/images/X.jpg')
+    background-repeat: no-repeat
+    background-size: 100% 100%
+    visibility: hidden
+
+.circulo
+    height: 50px
+    width: 50px
+    z-index: 0
+    flex-shrink: 0
+    background-image: url('/src/assets/images/O.jpg')
+    background-repeat: no-repeat
+    background-size: 100% 100%
