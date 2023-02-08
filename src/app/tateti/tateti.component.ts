@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { displayLog, mostrarGrilla } from './utils';
+import { displayLog, mostrarGrilla, resetTateti } from './utils';
 import { fromEvent } from 'rxjs';
 import { map, take } from 'rxjs/operators'; 
 
