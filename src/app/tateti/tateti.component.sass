@@ -1,5 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap')
+
+$font: 'Anton', sans-serif
+
 body
-    padding-left: 20px 
+    padding-left: 20px
+
+.my-text
+    text-transform: uppercase
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab)
+    background-size: 400% 400%
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
+    font:
+        size: 2vw
+        family: $font
+    -webkit-animation: MY_GRADIENT_ANIMATION 5s infinite
+    -moz-animation: MY_GRADIENT_ANIMATION 5s infinite
+    -o-animation: MY_GRADIENT_ANIMATION 5s infinite
+    animation: MY_GRADIENT_ANIMATION 5s infinite
+
+.my-text2
+    text-transform: uppercase
+    background: linear-gradient(-45deg, #99d134, #e73cd4, #2327d5, #d52323)
+    background-size: 400% 400%
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
+    font:
+        size: 1vw
+        family: $font
+    -webkit-animation: MY_GRADIENT_ANIMATION 5s infinite
+    -moz-animation: MY_GRADIENT_ANIMATION 5s infinite
+    -o-animation: MY_GRADIENT_ANIMATION 5s infinite
+    animation: MY_GRADIENT_ANIMATION 5s infinite
+
+@-webkit-keyframes MY_GRADIENT_ANIMATION
+    0%
+        background-position: 0% 50%
+    50%
+        background-position: 100% 50%
+    100%
+        background-position: 0% 50%
+
+@-moz-keyframes MY_GRADIENT_ANIMATION
+    0%
+        background-position: 0% 50%
+    50%
+        background-position: 100% 50%
+    100%
+        background-position: 0% 50%
+
+@-o-keyframes MY_GRADIENT_ANIMATION
+    0%
+        background-position: 0% 50%
+    50%
+        background-position: 100% 50%
+    100%
+        background-position: 0% 50%
+
+@keyframes MY_GRADIENT_ANIMATION
+    0%
+        background-position: 0% 50%
+    50%
+        background-position: 100% 50%
+    100%
+        background-position: 0% 50%
 
 .container
     display: flex 
