@@ -6,20 +6,6 @@ export const displayLog = (content: string)=> {
     logContainer.appendChild(element);
 }
 
-export const resetTateti = () =>{
-    //Se ocultan todos los elementos de la class cruz
-    var collectionCruz = Array.from(document.getElementsByClassName('cruz') as HTMLCollectionOf<HTMLElement>);
-    collectionCruz.forEach((element) => {
-        element.style.visibility = "hidden";
-    });
-
-    //Se ocultan todos los elementos de la class circulo
-    var collectionCirculo = Array.from(document.getElementsByClassName('circulo') as HTMLCollectionOf<HTMLElement>);
-    collectionCirculo.forEach((element) => {
-        element.style.visibility = "hidden";
-    });
-}
-
 export const mostrarGrilla = (content: any[])=> {
     var element: any;
     var grid: any = document.getElementById('grid');;

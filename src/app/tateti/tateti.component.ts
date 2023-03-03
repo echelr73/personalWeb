@@ -1,7 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { displayLog, mostrarGrilla, resetTateti } from './utils';
+import { Component, Inject, OnInit } from '@angular/core';
+import { displayLog, mostrarGrilla } from './utils';
 import { fromEvent } from 'rxjs';
-import { map, take } from 'rxjs/operators'; 
+import { map, takeWhile } from 'rxjs/operators'; 
+import { Subscription } from 'rxjs';
+import { window } from 'rxjs';
+import { ActivatedRoute, Router } from '@angular/router';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-tateti',
@@ -9,25 +13,30 @@ import { map, take } from 'rxjs/operators';
   styleUrls: ['./tateti.component.sass']
 })
 export class TatetiComponent implements OnInit {
-
-  constructor() { }
+  constructor( @Inject(DOCUMENT) private document: Document ) {}
 
   ngOnInit(): void {
-      /** start coding */
-      const grid:any = document.getElementById('grid');
-      const click$ = fromEvent(grid, 'click').pipe(
-          map((val:any,index) =>[
-              Math.floor(val.offsetX / 50) + "." +
-              Math.floor(val.offsetY / 50),
-              index
-          ]      
-          ),
-          take(8)
-      );
-      const subscription = click$.subscribe((data: any) => mostrarGrilla(data));
-  
-  
-      /** end coding */
+    this.tatetiStart();
   }
 
+  tatetiStart(){
+    const grid = document.getElementById('grid');
+    const click$ = fromEvent(grid, 'click').pipe(
+      map((val:any,index) =>[
+        Math.floor(val.offsetX / 50) + "." +
+        Math.floor(val.offsetY / 50),
+        index
+      ]),
+      takeWhile(([index]) =>index <= 8)
+    );
+    const subscription = click$.subscribe((data: any) => mostrarGrilla(data));
+  }
+
+  resetTateti(){
+    this.onReload();
+  }
+
+  onReload(){
+    this.document.location.reload();
+  }
 }
